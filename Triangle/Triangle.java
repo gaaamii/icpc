@@ -2,26 +2,29 @@ import java.util.Scanner;
 import java.util.Arrays;
 
 public class Triangle{
-
-  public static int squareInt(int x){
+  private static int squareInt(int x) {
     return x * x;
   }
-
-  public static void main(String[] args){
+  private static boolean isChokkaku(int[] lines) {
+    Arrays.sort(lines);
+    if (squareInt(lines[0]) + squareInt(lines[1]) == squareInt(lines[2])) {
+      return true;
+    }
+    return false;
+  }
+  public static void main(String[] args) {
     Scanner s = new Scanner(System.in);
     int n =  s.nextInt();
-    int[] lengths = new int[3];
+    int[] lines = new int[3];
     for (int i = 0; i < n; i++) {
       for (int j = 0; j < 3; j++){
-        lengths[j] = s.nextInt();
+        lines[j] = s.nextInt();
       }
-      Arrays.sort(lengths);
-      if (squareInt(lengths[0]) + squareInt(lengths[1]) == squareInt(lengths[2])){
+      if (isChokkaku(lines)) {
         System.out.println("YES");
-      } else{
+      } else {
         System.out.println("NO");
       }
     }
   }
-
 }
