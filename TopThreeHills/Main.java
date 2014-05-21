@@ -4,12 +4,14 @@ import java.util.Scanner;
 public class Main {
 
   public static void main(String[] args) {
+
     // 入力をもらうための変数を用意
     Scanner s = new Scanner(System.in);
+
     // 10こ分の配列
     int[] inputs = new int[10];
 
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i <= 9; i++) {
     // 入力されたものをinputに入れる
       inputs[i] = s.nextInt();
     }
@@ -22,4 +24,5 @@ public class Main {
     System.out.println(inputs[7]);
 
   }
+
 }
